@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.center {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(to bottom left, #099999, #000);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center p {
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    user-select: none;
+    text-shadow: 1px 1px 2px #000, -1px -1px 2px #000;
+}
+
+.dalga,
+.dalga2 {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background-color: #009999;
+    border: 2px solid #009999;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+
+}
+
+.center:hover~.dalga {
+    animation: dalgaefect 1000ms infinite linear;
+}
+
+.center:hover~.dalga2 {
+    animation: dalgaefect 1000ms infinite linear;
+    animation-delay: 0.2s;
+}
+
+.center:hover {
+    transform: translate(-50%, -50%) scale(0.8);
+    background: linear-gradient(to bottom right, #099999, #fff);
+    transition: 100ms all;
+    border: 2px solid #009999;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+@keyframes dalgaefect {
+    from {
+        transform: translate(-50%, -50%) scale(.5);
+        opacity: 1;
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(5);
+        opacity: 0;
+    }
+}
